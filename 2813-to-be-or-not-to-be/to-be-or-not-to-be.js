@@ -3,7 +3,7 @@
  * @return {Object}
  */
 var expect = function(val) {
-    const obj = {
+    obj = {
         toBe(val1){
             if(val === val1) return true;
             throw new Error("Not Equal");
