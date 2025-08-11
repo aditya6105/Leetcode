@@ -2,6 +2,7 @@ class Solution {
 public:
     vector<int> productQueries(int n, vector<vector<int>>& queries) {
         int MOD = 1000000007;
+        //int MOD = 1e9 + 7;
         vector<int> p;
         int temp = n;
         int power = 1;
