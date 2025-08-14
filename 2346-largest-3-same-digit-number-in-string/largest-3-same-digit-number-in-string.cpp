@@ -5,11 +5,12 @@ public:
         vector<string> v;
         for(int i=0;i<num.size();i++){
             int c = 0;
-            for(int j=i;j<num.size();j++){
-                if(num[i] == num[j]) c++;
-                else break;
+            int j = i;
+            while(j < num.size() && num[i] == num[j]){
+                c++;
+                j++;
                 if(c == 3){
-                    v.push_back(num.substr(i, j-i+1));
+                    v.push_back(num.substr(i, j-i));
                     break;
                 }
             }
