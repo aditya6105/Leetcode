@@ -3,9 +3,7 @@
  * @return {number}
  */
 var argumentsLength = function(...args) {
-    let c = 0;
-    for(let i=0;i<args.length;i++) c++;
-    return c;
+    return args.length;
 };
 
 /**
