@@ -6,7 +6,8 @@ public:
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 if(i == j) continue;
-                //points[i][0] -> x && points[i][1] -> y
+
+                // Treat points[i] as A(upper-left), points[j] as B(bottom-right)
                 if(points[i][0] <= points[j][0] && points[i][1] >= points[j][1]){ 
                     bool flag = true;
                     for(int k = 0; k < n; k++){
