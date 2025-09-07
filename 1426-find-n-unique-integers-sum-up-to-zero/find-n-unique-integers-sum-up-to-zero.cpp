@@ -1,14 +1,15 @@
 class Solution {
 public:
     vector<int> sumZero(int n) {
-        if(n == 2) return {1, -1};
+        int i = 1;
         vector<int> v;
-        for(int i=0;i<n-1;i++){
+        if(n % 2 != 0) v.push_back(0);
+        n = n/2;
+        while(n--){
             v.push_back(i);
+            v.push_back(-i);
+            i++;
         }
-        int sum = 0;
-        for(int i=0;i<v.size();i++) sum += v[i];
-        v.push_back(-(sum));
         return v;
     }
 };
