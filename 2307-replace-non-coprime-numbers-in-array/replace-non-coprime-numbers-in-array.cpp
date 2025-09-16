@@ -5,8 +5,8 @@ public:
             int g = gcd(nums[i], nums[i+1]);
             if (g > 1) {
                 // compute LCM safely
-                long long l = (1LL * nums[i] * nums[i+1]) / g;
-                nums[i] = (int)l;
+                long long lcm = (1LL * nums[i] * nums[i+1]) / g;
+                nums[i] = (int)lcm;
                 nums.erase(nums.begin() + i + 1); // remove the right neighbor
                 if (i > 0) --i;  // step back to recheck previous adjacency
             } else {
