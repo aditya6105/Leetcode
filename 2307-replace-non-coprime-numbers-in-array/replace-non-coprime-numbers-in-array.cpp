@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> replaceNonCoprimes(vector<int>& nums) {
         for (int i = 0; i < (int)nums.size() - 1; ) {
-            int g = std::gcd(nums[i], nums[i+1]);
+            int g = gcd(nums[i], nums[i+1]);
             if (g > 1) {
                 // compute LCM safely
                 long long l = (1LL * nums[i] * nums[i+1]) / g;
