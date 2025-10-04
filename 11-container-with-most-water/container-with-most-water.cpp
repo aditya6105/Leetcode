@@ -8,12 +8,8 @@ public:
             int height = min(h[i], h[j]);
             int dist = j - i;
             area = max(area, (height * dist));
-            if(h[i] > h[j]) j--;
-            else if(h[i] < h[j]) i++;
-            else{
-                i++;
-                j--;
-            }
+            if(h[i] < h[j]) i++;
+            else j--;
         }
         return area;
     }
