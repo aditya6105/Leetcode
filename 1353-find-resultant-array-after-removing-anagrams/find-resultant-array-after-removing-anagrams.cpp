@@ -1,26 +1,22 @@
 class Solution {
 public:
     vector<string> removeAnagrams(vector<string>& words) {
-        vector<string> v;
-        int ind = 0;
-        v.push_back(words[ind]);
-        for(int i=1;i<words.size();i++){
-            if(v[ind].size() == words[i].size()){
-                string s1 = v[ind];
-                string s2 = words[i];
-                sort(s1.begin(), s1.end());
-                sort(s2.begin(), s2.end());
-                if(s1 != s2){
-                    v.push_back(words[i]);
-                    ind++;
-                }
-            }
-            else{
-                v.push_back(words[i]);
-                ind++;
-            }
+        // vector<string> dupli = words;
+        vector<string> dupli;
+        for(auto it : words){
+            sort(it.begin(), it.end());
+            dupli.push_back(it);
         }
-        return v;
-
+        vector<int> v;
+        for(int i=0;i<dupli.size();i++){
+            if(i == 0){
+                v.push_back(i);
+                continue;
+            }
+            if(dupli[i-1] != dupli[i]) v.push_back(i);
+        }
+        dupli.clear();
+        for(int i=0;i<v.size();i++) dupli.push_back(words[v[i]]);
+        return dupli;
     }
 };
