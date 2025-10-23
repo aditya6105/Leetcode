@@ -10,7 +10,6 @@ public:
             }
             s = temp;
         }
-        if(s[0] == s[1]) return true;
-        return false;
+        return s[0] == s[1];
     }
 };
