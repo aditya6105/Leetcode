@@ -4,7 +4,7 @@ public:
         unordered_set<int> s;
         vector<int> v;
         for(auto it : nums){
-            if(s.count(it)) v.push_back(it);
+            if(s.find(it) != s.end()) v.push_back(it);
             s.insert(it);
         }
         return v;
