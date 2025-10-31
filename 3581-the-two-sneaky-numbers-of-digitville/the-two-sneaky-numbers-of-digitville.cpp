@@ -1,11 +1,12 @@
 class Solution {
 public:
     vector<int> getSneakyNumbers(vector<int>& nums) {
-        unordered_set<int> s;
+        int n = nums.size();
+        vector<int> hash(n, 0);
         vector<int> v;
         for(auto it : nums){
-            if(s.find(it) != s.end()) v.push_back(it);
-            s.insert(it);
+            if(hash[it] == 1) v.push_back(it);
+            hash[it]++;
         }
         return v;
     }
