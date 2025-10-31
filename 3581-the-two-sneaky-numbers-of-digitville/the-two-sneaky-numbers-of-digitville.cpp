@@ -1,10 +1,11 @@
 class Solution {
 public:
     vector<int> getSneakyNumbers(vector<int>& nums) {
+        unordered_set<int> s;
         vector<int> v;
-        sort(nums.begin(), nums.end());
-        for(int i=1;i<nums.size();i++){
-            if(nums[i] == nums[i - 1]) v.push_back(nums[i]);
+        for(auto it : nums){
+            if(s.count(it)) v.push_back(it);
+            s.insert(it);
         }
         return v;
     }
