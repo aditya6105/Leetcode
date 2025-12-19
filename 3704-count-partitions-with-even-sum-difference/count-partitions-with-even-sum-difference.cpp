@@ -7,7 +7,6 @@ public:
             sum += nums[i];
             v.push_back(sum);
         }
-        for(auto it : v) cout << it << " ";
         int k = v.size() - 1;
         int c = 0;
         for(int i=0;i<v.size() - 1;i++){
